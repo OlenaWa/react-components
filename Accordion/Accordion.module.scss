@@ -1,0 +1,66 @@
+@use "sass:math";
+@import "src/assets/styles/style";
+
+.accordionTitle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: rem(18);
+  line-height: math.div(22, 18);
+  transition: all 0.3s ease 0s;
+  background-color: $ColorWhite;
+  padding: rem(20);
+  margin-top: rem(10);
+  margin-bottom: rem(5);
+  border-radius: rem(4);
+  &.active {
+    color: $ColorMain;
+    svg path {
+      fill: $ColorMain !important;
+    }
+  }
+
+  @media (any-hover: hover) {
+    &:hover {
+      box-shadow: 0 rem(4) rem(20) rgba(255, 0, 144, 0.2);
+      color: $ColorMain;
+      svg path {
+        fill: $ColorMain !important;
+      }
+    }
+  }
+}
+
+.arrow {
+  display: inline-block;
+  margin-left: 1rem;
+  transform: rotate(0deg);
+  transition: transform 0.15s ease;
+}
+
+.arrow.active {
+  transform: rotate(180deg);
+}
+
+.accordionContent {
+  overflow-y: auto;
+  overflow-x: hidden;
+  max-height: 0;
+  transition: max-height 0.5s ease;
+
+}
+
+.accordionContent.active {
+  max-height: rem(500);
+  transition: max-height 2.5s ease;
+}
+
+.accordionContentMain {
+  border: rem(1) solid $ColorMain;
+  border-radius: rem(4);
+  padding: rem(20);
+  margin-top: rem(5);
+  margin-bottom: rem(10);
+}
