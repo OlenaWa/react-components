@@ -1,0 +1,27 @@
+@import "../../../../assets/styles/style";
+
+.Wrapper {
+  max-width: rem(2560);
+  padding-right: rem(20);
+  padding-left: rem(20);
+  margin: 0 auto;
+  padding-top: rem(200);
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  // Press the footer
+  > main {
+    flex: 1 1 auto;
+  }
+
+  // Fix for sliders
+  > * {
+    min-width: 0;
+  }
+
+  @media (max-width: em(600)){
+    padding-right: rem(10);
+    padding-left: rem(10);
+  }
+}

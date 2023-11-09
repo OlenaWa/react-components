@@ -1,0 +1,233 @@
+@use "sass:math";
+@import "../../../../../../assets/styles/style";
+
+.main {
+  @include adaptiveValue("padding-top", 24, 18);
+  @include adaptiveValue("padding-bottom", 24, 18);
+  display: flex;
+  min-height: rem(70);
+  align-items: center;
+}
+
+.logo {
+  @include adaptiveValue("font-size", 30, 10);
+}
+
+.search {
+  flex: 1 1 auto;
+  max-width: rem(370);
+  margin-right: rem(10);
+  @include adaptiveValue("margin-left", 158, 50,0,2560,1800);
+  &Form {
+    background-color: rgba(7, 7, 7, 0.03);
+    border-radius: rem(3);
+    position: relative;
+    border: 1px solid rgba(4, 4, 4, 0.5);
+  }
+
+  &Button {
+    position: absolute;
+    background-color: transparent;
+    height: rem(41);
+    width: rem(41);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: rem(8);
+    font-size: rem(14);
+    color: rgba(0, 0, 0, 0.5);
+  }
+
+  &Input {
+    width: 100%;
+    background-color: transparent;
+    border-radius: rem(3);
+    height: rem(41);
+    color: $ColorDark;
+    padding: 0 rem(20) 0 rem(50);
+
+    &::placeholder {
+      color: rgba(0, 0, 0, 0.5);
+    }
+  }
+
+}
+
+.actions {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: rem(50);
+
+  &Location {
+    display: inline-flex;
+    gap: rem(10);
+    align-items: center;
+    font-weight: 600;
+    @include adaptiveValue("margin-right", 25, 0, 1620, 1400, 1);
+    path {
+      transition: all 0.3s ease 0s;
+    }
+    @media (any-hover: hover) {
+      &:hover {
+        path {
+          fill: $ColorMain !important;
+        }
+        .actionsLocationText {
+          color: $ColorMain;
+        }
+      }
+    }
+
+    &Icon {
+      width: auto;
+    }
+
+    &Text {
+      transition: all 0.3s ease 0s;
+      color: $ColorDark;
+      text-decoration: none;
+      font-size: rem(18);
+      font-weight: 600;
+    }
+
+  }
+
+  &Phones {
+    display: flex;
+    gap: rem(3);
+    flex-direction: column;
+    white-space: nowrap;
+  }
+
+  &Phone {
+    text-decoration: none;
+    display: block;
+    transition: all 0.3s ease 0s;
+    font-size: rem(18);
+    font-weight: 600;
+    line-height: math.div(22, 18);
+    @media (any-hover: hover) {
+      &:hover {
+        color: $ColorMain;
+      }
+    }
+  }
+
+  &Callback {
+    display: block;
+    color: $ColorMain;
+    transition: all 0.3s ease 0s;
+    font-size: rem(18);
+    font-weight: 700;
+    line-height: math.div(22, 18);
+    @media (any-hover: hover) {
+      &:hover {
+        opacity: 0.6;
+      }
+    }
+  }
+
+  &Love {
+    cursor: pointer;
+    position: relative;
+    margin-right: rem(50);
+    path {
+      transition: all 0.3s ease 0s;
+    }
+    @media (any-hover: hover) {
+      &:hover {
+        path {
+          fill: $ColorMain !important;
+        }
+      }
+    }
+    span {
+      min-width: rem(20);
+      min-height: rem(20);
+      max-width: rem(20);
+      max-height: rem(20);
+      font-size: rem(12);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: $ColorMain;
+      border-radius: 50%;
+      color: $ColorWhite;
+      line-height: 0;
+      position: absolute;
+      left: 50%;
+      top: 140%;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+}
+
+.cart {
+  font-size: rem(14);
+  display: flex;
+  align-items: center;
+  gap: rem(15);
+
+  &Icon {
+    margin-right: rem(15);
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    path {
+      transition: all 0.3s ease 0s;
+    }
+    @media (any-hover: hover) {
+      &:hover {
+        path {
+          stroke: $ColorMain !important;
+        }
+      }
+    }
+
+    span {
+      min-width: rem(16);
+      min-height: rem(16);
+      max-width: rem(16);
+      max-height: rem(16);
+      font-size: rem(8);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: $ColorMain;
+      border-radius: 50%;
+      color: $ColorWhite;
+      line-height: 0;
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+  }
+
+  &Body {
+    font-size: rem(18);
+    font-weight: 500;
+    display: flex;
+    flex-direction: column;
+    gap: rem(5);
+
+    &Sum {
+      width: auto;
+    }
+
+    &Link {
+      cursor: pointer;
+      color: $ColorMain;
+      transition: all 0.3s ease 0s;
+      @media (any-hover: hover) {
+        &:hover {
+          opacity: 0.6;
+        }
+      }
+    }
+
+  }
+
+}

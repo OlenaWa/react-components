@@ -1,0 +1,130 @@
+@use "sass:math";
+@import "../../../../../assets/styles/style";
+
+.main {
+  background-color: $ColorMain;
+}
+
+.mainContainer {
+  max-width: rem(3000);
+  margin: 0 auto;
+}
+
+.catalog {
+  position: relative;
+}
+
+.catalogItems {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  row-gap: rem(10);
+  @include adaptiveValue("column-gap", 180, 10);
+  //padding-top: rem(18);
+  //padding-bottom: rem(18);
+}
+
+.catalogItem {
+  display: block;
+  color: $ColorWhite;
+  font-size: rem(18);
+  font-weight: 500;
+  padding-top: rem(18);
+  padding-bottom: rem(18);
+  transition: all 0.3s ease 0s;
+  border-bottom: rem(2) solid rgba(255, 255, 255, 0);
+  @media (any-hover: hover) {
+    &:hover {
+      opacity: 0.8;
+      border-bottom: rem(2) solid $ColorWhite;
+    }
+  }
+
+  &.active {
+    border-bottom: rem(2) solid $ColorWhite;
+  }
+}
+
+.active {
+  position: static;
+}
+
+.catalogBody {
+  background-color: $ColorWhite;
+  min-width: 100%;
+  z-index: 50;
+  position: absolute;
+}
+
+.catalogBodyItems {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  row-gap: rem(10);
+  @include adaptiveValue("column-gap", 180, 10);
+  padding-top: rem(30);
+  padding-bottom: rem(30);
+  border-bottom: rem(1) solid $ColorMain;
+}
+
+
+.catalogBodyItemList {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: rem(20);
+}
+
+.catalogBodyItem {
+  display: block;
+  font-size: 1.125rem;
+  text-align: center;
+  font-weight: 500;
+}
+
+.catalogBodyLink {
+  display: block;
+  font-weight: 700;
+  font-size: rem(16);
+  line-height: math.div(20, 16);
+
+  &.active {
+    position: static;
+  }
+
+  transition: all 0.3s ease 0s;
+  @media (any-hover: hover) {
+    &:hover {
+      color: $ColorMain;
+    }
+  }
+}
+
+.catalogBodySubItems {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  row-gap: rem(10);
+  @include adaptiveValue("column-gap", 180, 10);
+  padding-top: rem(30);
+  padding-bottom: rem(30);
+}
+
+.catalogBodySubList {
+  display: flex;
+  flex-direction: column;
+  gap: rem(20);
+}
+
+.catalogBodySubItem {
+  position: static;
+}
+
+.catalogBodySubLink {
+  font-weight: 500;
+  font-size: rem(16);
+  line-height: math.div(20, 16);
+  transition: all 0.3s ease 0s;
+  @media (any-hover: hover) {
+    &:hover {
+      color: $ColorMain;
+    }
+  }
+}

@@ -1,0 +1,17 @@
+@import "src/assets/styles/style";
+
+.main {
+  background-color: $ColorMain;
+
+}
+
+.body {
+  @include adaptiveValue("padding-top", 60, 40);
+  @include adaptiveValue("padding-bottom", 60, 40);
+  @include adaptiveValue("margin-right", 180, 0);
+  @include adaptiveValue("margin-left", 180, 0);
+}
+
+.title {
+  margin-bottom: rem(30);
+}

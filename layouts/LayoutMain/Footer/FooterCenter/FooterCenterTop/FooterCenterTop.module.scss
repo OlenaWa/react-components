@@ -1,0 +1,59 @@
+@use "sass:math";
+@import "src/assets/styles/style";
+
+.main {
+  @include adaptiveValue("margin-right", 20, 10);
+  @include adaptiveValue("margin-left", 20, 10);
+  @include adaptiveValue("margin-top", 100, 50);
+}
+
+.body {
+
+}
+
+.columns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: rem(150);
+}
+
+.column {
+
+}
+
+.title {
+  font-weight: 600;
+  font-size: rem(20);
+  line-height: math.div(24, 18);
+  @include adaptiveValue("margin-bottom", 25, 20);
+  display: block;
+  transition: all 0.3s ease 0s;
+  @media (any-hover: hover) {
+    &:hover {
+      color: $ColorMain;
+    }
+  }
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  @include adaptiveValue("gap", 20, 16);
+}
+
+.item {
+
+}
+
+.link {
+  transition: all 0.3s ease 0s;
+  font-weight: 500;
+  font-size: rem(18);
+  line-height: math.div(22, 18);
+  opacity: 0.8;
+  @media (any-hover: hover) {
+    &:hover {
+      color: $ColorMain;
+    }
+  }
+}

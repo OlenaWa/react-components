@@ -1,0 +1,17 @@
+@import "src/assets/styles/style";
+
+.main {
+  color: $ColorDark;
+}
+
+.text {
+  color: $ColorWhite;
+  transition: all 0.3s ease 0s;
+  padding: rem(5);
+  @media (any-hover: hover) {
+    &:hover {
+      background-color: $ColorWhite;
+      color: $ColorMain;
+    }
+  }
+}
